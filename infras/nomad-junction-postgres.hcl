@@ -30,7 +30,7 @@ job "postgres-junction" {
         mount {
           type   = "bind"
           target = "/data/postgres"
-          source = "/home/david/workspace/grafana-junction"
+          source = "/home/david/workspace/postgres-junction"
           readonly = false
         }
       }
