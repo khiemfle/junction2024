@@ -1,4 +1,4 @@
-job "metrics" {
+job "metrics-junction" {
   datacenters = ["dc1"]
   type        = "service"
   node_pool   = "all"
@@ -9,10 +9,10 @@ job "metrics" {
     value     = "${attr.unique.hostname}"
   }
 
-  group "grafana" {
+  group "grafana-junction" {
     count = 1
 
-    task "grafana" {
+    task "grafana-junction" {
       driver = "docker"
 
       config {
@@ -21,7 +21,7 @@ job "metrics" {
         mount {
           type   = "bind"
           target = "/var/lib/grafana"
-          source = "/home/david/workspace/grafana"
+          source = "/home/david/workspace/grafana-junction"
           readonly = false
         }
       }
@@ -38,25 +38,25 @@ job "metrics" {
       }
 
       service {
-        name = "grafana"
+        name = "grafana-junction"
         port = "web"
         provider = "nomad"
 
         tags = [
           "traefik.enable=true",
-          "traefik.http.routers.grafana.rule=Host(`grafana.khiemfle.com`)",
-          "traefik.http.routers.grafana.tls=true",
-          "traefik.http.routers.grafana.entrypoints=web,websecure",
-          "traefik.http.routers.grafana.tls.certresolver=mytlschallenge",
-          "traefik.http.middlewares.grafana.headers.SSLRedirect=true",
-          "traefik.http.middlewares.grafana.headers.STSSeconds=315360000",
-          "traefik.http.middlewares.grafana.headers.browserXSSFilter=true", 
-          "traefik.http.middlewares.grafana.headers.contentTypeNosniff=true",
-          "traefik.http.middlewares.grafana.headers.forceSTSHeader=true",
-          "traefik.http.middlewares.grafana.headers.SSLHost=grafana.khiemfle.com",
-          "traefik.http.middlewares.grafana.headers.STSIncludeSubdomains=true",
-          "traefik.http.middlewares.grafana.headers.STSPreload=true",
-          "traefik.http.routers.grafana.middlewares=grafana@nomad",
+          "traefik.http.routers.grafana-junction.rule=Host(`grafana.junction.khiemfle.com`)",
+          "traefik.http.routers.grafana-junction.tls=true",
+          "traefik.http.routers.grafana-junction.entrypoints=web,websecure",
+          "traefik.http.routers.grafana-junction.tls.certresolver=mytlschallenge",
+          "traefik.http.middlewares.grafana-junction.headers.SSLRedirect=true",
+          "traefik.http.middlewares.grafana-junction.headers.STSSeconds=315360000",
+          "traefik.http.middlewares.grafana-junction.headers.browserXSSFilter=true", 
+          "traefik.http.middlewares.grafana-junction.headers.contentTypeNosniff=true",
+          "traefik.http.middlewares.grafana-junction.headers.forceSTSHeader=true",
+          "traefik.http.middlewares.grafana-junction.headers.SSLHost=grafana.junction.khiemfle.com",
+          "traefik.http.middlewares.grafana-junction.headers.STSIncludeSubdomains=true",
+          "traefik.http.middlewares.grafana-junction.headers.STSPreload=true",
+          "traefik.http.routers.grafana-junction.middlewares=grafana-junction@nomad",
         ]
         check {
           type     = "http"
