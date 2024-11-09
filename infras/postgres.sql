@@ -27,14 +27,14 @@ CREATE TABLE sector (
     id TEXT PRIMARY KEY,
     location VARCHAR(255),
     name VARCHAR(255) NOT NULL,
-    sector_type_id INTEGER NOT NULL,
+    sector_type_id TEXT NOT NULL,
     FOREIGN KEY (sector_type_id) REFERENCES sector_type(id) ON DELETE CASCADE
 );
 
 -- Table: batch
 CREATE TABLE batch (
     id TEXT PRIMARY KEY,
-    product_id INTEGER NOT NULL,
+    product_id TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE
 );
@@ -42,8 +42,8 @@ CREATE TABLE batch (
 -- Table: batch_state
 CREATE TABLE batch_state (
     id TEXT PRIMARY KEY,
-    batch_id INTEGER NOT NULL,
-    sector_id INTEGER NOT NULL,
+    batch_id TEXT NOT NULL,
+    sector_id TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (batch_id) REFERENCES batch(id) ON DELETE CASCADE,
     FOREIGN KEY (sector_id) REFERENCES sector(id) ON DELETE CASCADE
@@ -52,8 +52,8 @@ CREATE TABLE batch_state (
 -- Table: package
 CREATE TABLE package (
     id TEXT PRIMARY KEY,
-    product_id INTEGER NOT NULL,
-    sector_id INTEGER NOT NULL,
+    product_id TEXT NOT NULL,
+    sector_id TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE,
     FOREIGN KEY (sector_id) REFERENCES sector(id) ON DELETE CASCADE
@@ -62,9 +62,9 @@ CREATE TABLE package (
 -- Table: predefined_feedback
 CREATE TABLE predefined_feedback (
     id TEXT PRIMARY KEY,
-    product_id INTEGER NOT NULL,
-    sector_type_id INTEGER NOT NULL,
-    severity_level INTEGER NOT NULL,
+    product_id TEXT NOT NULL,
+    sector_type_id TEXT NOT NULL,
+    severity_level TEXT NOT NULL,
     image TEXT,
     description TEXT,
     FOREIGN KEY (product_id) REFERENCES product(id) ON DELETE CASCADE,
@@ -74,9 +74,9 @@ CREATE TABLE predefined_feedback (
 -- Table: feedback
 CREATE TABLE feedback (
     id TEXT PRIMARY KEY,
-    predefined_feedback_id INTEGER NOT NULL,
-    batch_state_id INTEGER NOT NULL,
-    package_id INTEGER NOT NULL,
+    predefined_feedback_id TEXT NOT NULL,
+    batch_state_id TEXT NOT NULL,
+    package_id TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (predefined_feedback_id) REFERENCES predefined_feedback(id) ON DELETE CASCADE,
     FOREIGN KEY (batch_state_id) REFERENCES batch_state(id) ON DELETE CASCADE,
