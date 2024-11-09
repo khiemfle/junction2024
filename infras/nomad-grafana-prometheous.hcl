@@ -28,7 +28,7 @@ job "metrics-junction" {
 
       env {
         GF_SECURITY_ADMIN_PASSWORD = "admin"
-        GF_SECURITY_ADMIN_USER     = "UK}9h}eSX*w5MPD92Q?*inxxeLCfE)FngHJY"
+        GF_SECURITY_ADMIN_USER     = "admin"
         GF_SERVER_ROOT_URL = "https://grafana.junction.khiemfle.com"
       }
 
