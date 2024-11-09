@@ -27,8 +27,8 @@ job "metrics" {
       }
 
       env {
-        GF_SECURITY_ADMIN_PASSWORD = "admin"
-        GF_SECURITY_ADMIN_USER     = "admin"
+        GF_SECURITY_ADMIN_PASSWORD = "admin-KvCPHPAPmoxemAi3en5whJ9cFLm"
+        GF_SECURITY_ADMIN_USER     = "UK}9h}eSX*w5MPD92Q?*inxxeLCfE)FngHJY"
         GF_SERVER_ROOT_URL = "https://grafana.khiemfle.com"
       }
 
