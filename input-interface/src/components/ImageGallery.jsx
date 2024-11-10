@@ -86,6 +86,7 @@ const ImageGallery = ({ images }) => {
           isSubmitting={isSubmitting}
           error={error}
           imageId={selectedImage?.json.id}
+          selectedImage={selectedImage}
         />
       )}
     </div>
