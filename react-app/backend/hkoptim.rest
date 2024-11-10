@@ -1,2 +1,2 @@
 ###
-GET http://localhost:8000/ HTTP/1.1
+GET http://127.0.0.1:8000/generate-qr?data=https%3A%2F%2Fjunction2024-kappa.vercel.app%2F%3Fbatch_state_id%3D8532e62d HTTP/1.1
