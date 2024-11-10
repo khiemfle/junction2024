@@ -8,15 +8,9 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Get batch_state_id from URL parameters
+    // Get batch_state_id from URL parameters or use default
     const urlParams = new URLSearchParams(window.location.search);
-    const batchStateId = urlParams.get('batch_state_id');
-
-    if (!batchStateId) {
-      setError('No batch_state_id provided');
-      setLoading(false);
-      return;
-    }
+    const batchStateId = urlParams.get('batch_state_id') || 'cacb4d3c';
 
     // Fetch images using the batch_state_id
     const fetchImages = async () => {
