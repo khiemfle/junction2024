@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ConfirmationModal from './ConfirmationModal';
+import ThankYouPage from './ThankYouPage';
 import './ImageGallery.css';
 
 const ImageGallery = ({ images }) => {
@@ -7,6 +8,7 @@ const ImageGallery = ({ images }) => {
   const [showModal, setShowModal] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleImageClick = (image) => {
     setSelectedImage(image);
@@ -49,6 +51,7 @@ const ImageGallery = ({ images }) => {
 
       // Close modal after successful submission
       setShowModal(false);
+      setIsSubmitted(true);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -61,6 +64,10 @@ const ImageGallery = ({ images }) => {
     setSelectedImage(null);
     setError(null);
   };
+
+  if (isSubmitted) {
+    return <ThankYouPage selectedImage={selectedImage} />;
+  }
 
   return (
     <div className="image-gallery">
