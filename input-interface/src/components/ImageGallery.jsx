@@ -17,9 +17,16 @@ const ImageGallery = ({ images }) => {
     setIsSubmitting(true);
     setError(null);
 
-    // Get batch_state_id from URL or use default
+    // Get batch_state_id from URL
     const urlParams = new URLSearchParams(window.location.search);
-    const batchStateId = urlParams.get('batch_state_id') || 'cacb4d3c';
+    const batchStateId = urlParams.get('batch_state_id');
+
+    // Check if batch_state_id is missing
+    if (!batchStateId) {
+      setError('batch_state_id is required');
+      setIsSubmitting(false);
+      return;
+    }
 
     try {
       const response = await fetch(
