@@ -16,7 +16,7 @@ function App() {
     const fetchImages = async () => {
       try {
         const response = await fetch(
-          `https://n8n.khiemfle.com/webhook-test/4df2fb7c-a141-46ab-935f-eb874ba4ce95/available-feedbacks/batch-state?batch_state_id=${batchStateId}`
+          `https://n8n.khiemfle.com/webhook/4df2fb7c-a141-46ab-935f-eb874ba4ce95/available-feedbacks/batch-state?batch_state_id=${batchStateId}`
         );
         
         if (!response.ok) {
