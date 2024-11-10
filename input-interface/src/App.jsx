@@ -52,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Ongelmaraportti</h1>
+      <h1>Report Issue</h1>
       <ImageGallery images={images} />
     </div>
   );
