@@ -16,8 +16,8 @@ Sustainable Production Practices: Decreased food waste through optimized process
 
 ## Some QR codes for batches for the scanning and reporting
 - Batch State ID 30ebd610 - Preproduction: http://127.0.0.1:8000/generate-qr?data=https%3A%2F%2Fjunction2024-kappa.vercel.app%2F%3Fbatch_state_id%3D30ebd610
-  - ![Preproduction](../qrcodes-batches/preproduction.png)
+  - ![Preproduction](qrcodes-batches/preproduction.png)
 - Batch State ID cacb4d3c - Cooking: http://127.0.0.1:8000/generate-qr?data=https%3A%2F%2Fjunction2024-kappa.vercel.app%2F%3Fbatch_state_id%3Dcacb4d3c
-  - ![Cooking](../qrcodes-batches/cooking.png)
+  - ![Cooking](qrcodes-batches/cooking.png)
 - Batch State ID 8532e62d - Storage: http://127.0.0.1:8000/generate-qr?data=https%3A%2F%2Fjunction2024-kappa.vercel.app%2F%3Fbatch_state_id%3D8532e62d
-  - ![Storage](../qrcodes-batches/storage.png)
+  - ![Storage](qrcodes-batches/storage.png)
