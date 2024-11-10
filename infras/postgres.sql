@@ -75,8 +75,8 @@ CREATE TABLE predefined_feedback (
 CREATE TABLE feedback (
     id TEXT PRIMARY KEY,
     predefined_feedback_id TEXT NOT NULL,
-    batch_state_id TEXT NOT NULL,
-    package_id TEXT NOT NULL,
+    batch_state_id TEXT,
+    package_id TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (predefined_feedback_id) REFERENCES predefined_feedback(id) ON DELETE CASCADE,
     FOREIGN KEY (batch_state_id) REFERENCES batch_state(id) ON DELETE CASCADE,
