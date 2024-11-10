@@ -1,0 +1,1734 @@
+{
+  "name": "junction-2024",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "product",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=0"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        720,
+        -440
+      ],
+      "id": "ede2651c-b688-4e65-a947-6be43847d9fc",
+      "name": "Google Sheets Trigger",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ybVfp0ylWhi2OAXP",
+          "name": "Google Sheets Trigger account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1333730778,
+          "mode": "list",
+          "cachedResultName": "batch-state",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1333730778"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id",
+              "lookupValue": "={{ $json.query.batch_state_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "77432f9a-ae7a-47eb-b3db-6674c66384a4",
+      "name": "Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        720,
+        1300
+      ],
+      "alwaysOutputData": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "H9tGHfJKAtMCJXMl",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "4df2fb7c-a141-46ab-935f-eb874ba4ce95/available-feedbacks/batch-state",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "98987902-1b2b-4d2e-9557-1cfaa20cb02a",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        400,
+        1220
+      ],
+      "webhookId": "18066e75-4468-4ea3-8e2b-0e5a8b9b425f"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1658530933,
+          "mode": "list",
+          "cachedResultName": "sector",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1658530933"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id",
+              "lookupValue": "={{ $json.sector_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d319d444-d544-428b-b631-0cc0e502f376",
+      "name": "Google Sheets1",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1180,
+        1220
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "H9tGHfJKAtMCJXMl",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1122246846,
+          "mode": "list",
+          "cachedResultName": "predefined-feedback",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1122246846"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "product_id",
+              "lookupValue": "={{ $json.product_id }}"
+            },
+            {
+              "lookupColumn": "sector_type_id",
+              "lookupValue": "={{ $('Google Sheets1').item.json.sector_type_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "45ec9c10-6a7b-47f7-8784-16a65b8ad5da",
+      "name": "Google Sheets2",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1560,
+        1220
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "H9tGHfJKAtMCJXMl",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1061212988,
+          "mode": "list",
+          "cachedResultName": "batch",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1061212988"
+        },
+        "filtersUI": {
+          "values": [
+            {
+              "lookupColumn": "id",
+              "lookupValue": "={{ $('Google Sheets').item.json.batch_id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e3a86d0d-d1ec-4ff0-8036-774acffab244",
+      "name": "Google Sheets3",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        1340,
+        1260
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "H9tGHfJKAtMCJXMl",
+          "name": "Google Sheets account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "path": "4df2fb7c-a141-46ab-935f-eb874ba4ce95/images",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "1d2d5db2-8296-4197-bb05-2e37c69cdceb",
+      "name": "Webhook1",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        440,
+        1440
+      ],
+      "webhookId": "9897446e-53ef-4af2-a5d4-4ec85f454178"
+    },
+    {
+      "parameters": {
+        "resource": "fileFolder",
+        "queryString": "={{ $json.query.file_name.split(\"/\").last() }}",
+        "filter": {},
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        820,
+        1500
+      ],
+      "id": "7b69623b-dc91-4040-b6de-61a72f5d517b",
+      "name": "Google Drive1",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "9",
+          "name": "Google Drive khiemfle"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "download",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.id }}",
+          "mode": "id"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        1040,
+        1500
+      ],
+      "id": "53e42836-9f0f-492b-9d7b-50c423fc8792",
+      "name": "Google Drive2",
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "9",
+          "name": "Google Drive khiemfle"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "binary",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        1260,
+        1500
+      ],
+      "id": "13e98bc4-e09c-4365-9dbb-b9095b6979f6",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $input.all() }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        2180,
+        1200
+      ],
+      "id": "f0db24f4-ae76-4d4a-8441-805ea72f76de",
+      "name": "Respond to Webhook1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2afc0d4b-ee65-4752-9d73-13ac1668e048",
+              "name": "download_link",
+              "value": "={{ \"https://n8n.khiemfle.com/webhook/4df2fb7c-a141-46ab-935f-eb874ba4ce95/images?file_name=\" + $json.image }}",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "include": "selected",
+        "includeFields": "id",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1860,
+        1220
+      ],
+      "id": "a677ad3c-32b9-4162-bc95-0de03edb9977",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "4df2fb7c-a141-46ab-935f-eb874ba4ce95/feedback/batch",
+        "options": {}
+      },
+      "id": "445aee16-8b8e-48c4-baaf-43b6a558c6ae",
+      "name": "Webhook2",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        420,
+        1080
+      ],
+      "webhookId": "e79fda49-d14d-40d8-855e-2be7ef67dcd3"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 474833122,
+          "mode": "list",
+          "cachedResultName": "feedback",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=474833122"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "predefined_feedback_id": "={{ $json.body.feedback_template_id }}",
+            "batch_state_id": "={{ $json.body.batch_state_id }}",
+            "created_at": "={{ new Date().toLocaleString(\"en-US\", { timeZone: \"Europe/Helsinki\", month: \"numeric\", day: \"numeric\", year: \"numeric\", hour: \"numeric\", minute: \"numeric\", second: \"numeric\", hour12: true }) }}",
+            "id": "={{ new Date().toISOString().replace(/[-:.TZ]/g, '') + '-' + Math.random().toString(36).substring(2, 10) }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "predefined_feedback_id",
+              "displayName": "predefined_feedback_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "batch_state_id",
+              "displayName": "batch_state_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "package_id",
+              "displayName": "package_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [
+        640,
+        1080
+      ],
+      "id": "e3a6ac75-aef6-4e77-b63d-c8e1dc48f9f9",
+      "name": "Google Sheets4",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "5",
+          "name": "khiemfle-google-sheet"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "product",
+          "mode": "list",
+          "cachedResultName": "product"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "name": "={{ $json.name }}",
+            "image": "={{ $json.image }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "image",
+              "displayName": "image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1620,
+        -440
+      ],
+      "id": "3f9cc964-ac54-4d88-8ed2-91901863527c",
+      "name": "Postgres",
+      "credentials": {
+        "postgres": {
+          "id": "y2dVPAsn5vEdOtGc",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1658530933,
+          "mode": "list",
+          "cachedResultName": "sector",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1658530933"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        720,
+        -140
+      ],
+      "id": "67d1bf0b-8215-4c97-9078-78d2774494d8",
+      "name": "Google Sheets Trigger1",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ybVfp0ylWhi2OAXP",
+          "name": "Google Sheets Trigger account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "sector",
+          "mode": "list",
+          "cachedResultName": "sector"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {
+            "id": "={{ $json.id }}",
+            "location": "={{ $json.location }}",
+            "name": "={{ $json.name }}",
+            "sector_type_id": "={{ $json.sector_type_id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "location",
+              "displayName": "location",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "sector_type_id",
+              "displayName": "sector_type_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1620,
+        -140
+      ],
+      "id": "a0a3bf38-5d32-48eb-99e0-1ecdcd0ad27f",
+      "name": "Postgres1",
+      "credentials": {
+        "postgres": {
+          "id": "y2dVPAsn5vEdOtGc",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 882474305,
+          "mode": "list",
+          "cachedResultName": "sector-type",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=882474305"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        740,
+        -280
+      ],
+      "id": "334d0671-f9e0-4ed7-95b6-082e289d65f2",
+      "name": "Google Sheets Trigger2",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ybVfp0ylWhi2OAXP",
+          "name": "Google Sheets Trigger account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "sector_type",
+          "mode": "list",
+          "cachedResultName": "sector_type"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "name": "={{ $json.name }}",
+            "description": "={{ $json.description }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "name",
+              "displayName": "name",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1640,
+        -280
+      ],
+      "id": "7927c8e1-caee-4df7-9278-7b8d6a366860",
+      "name": "Postgres2",
+      "credentials": {
+        "postgres": {
+          "id": "y2dVPAsn5vEdOtGc",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1129493600,
+          "mode": "list",
+          "cachedResultName": "package",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1129493600"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        720,
+        60
+      ],
+      "id": "43049c37-07ef-4821-804c-a395b7f61c44",
+      "name": "Google Sheets Trigger3",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ybVfp0ylWhi2OAXP",
+          "name": "Google Sheets Trigger account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "package",
+          "mode": "list",
+          "cachedResultName": "package"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "product_id": "={{ $json.product_id }}",
+            "sector_id": "={{ $json.sector_id }}",
+            "created_at": "={{ \n    (() => {\n        const excelSerialDate = $json.created_at;\n        const excelEpoch = new Date('1899-12-30T00:00:00Z');\n        const millisecondsInADay = 86400000;\n\n        // Calculate the original timestamp from Excel serial date in Helsinki time\n        let timestamp = new Date(excelEpoch.getTime() + excelSerialDate * millisecondsInADay);\n\n        // Force the time to Helsinki timezone by adjusting manually\n        let offsetHelsinki = -2 * 60; // Offset in minutes for Europe/Helsinki during standard time\n        let helsinkiTimestamp = new Date(timestamp.getTime() + offsetHelsinki * 60000);\n\n        // Convert Helsinki date to UTC\n        return helsinkiTimestamp.toISOString().replace('T', ' ').split('.')[0];\n    })() \n}}\n"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "product_id",
+              "displayName": "product_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "sector_id",
+              "displayName": "sector_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1620,
+        60
+      ],
+      "id": "e7cf9110-1ea9-4e91-9d6a-fd4073286604",
+      "name": "Postgres3",
+      "credentials": {
+        "postgres": {
+          "id": "y2dVPAsn5vEdOtGc",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1122246846,
+          "mode": "list",
+          "cachedResultName": "predefined-feedback",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1122246846"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        720,
+        360
+      ],
+      "id": "ab32b880-5ecd-4673-b7a3-c4fb1c78a36d",
+      "name": "Google Sheets Trigger4",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ybVfp0ylWhi2OAXP",
+          "name": "Google Sheets Trigger account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "predefined_feedback",
+          "mode": "list",
+          "cachedResultName": "predefined_feedback"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_id",
+              "displayName": "product_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "sector_type_id",
+              "displayName": "sector_type_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "severity_level",
+              "displayName": "severity_level",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "image",
+              "displayName": "image",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "description",
+              "displayName": "description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1620,
+        360
+      ],
+      "id": "d4a8baf6-d136-4b12-9423-afbb335420bc",
+      "name": "Postgres4",
+      "credentials": {
+        "postgres": {
+          "id": "y2dVPAsn5vEdOtGc",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1061212988,
+          "mode": "list",
+          "cachedResultName": "batch",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1061212988"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        740,
+        220
+      ],
+      "id": "393bff20-d4f2-495b-9cbf-c329234fa27e",
+      "name": "Google Sheets Trigger5",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ybVfp0ylWhi2OAXP",
+          "name": "Google Sheets Trigger account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "batch",
+          "mode": "list",
+          "cachedResultName": "batch"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "product_id": "={{ $json.product_id }}",
+            "created_at": "={{ \n    (() => {\n        const excelSerialDate = $json.created_at;\n        const excelEpoch = new Date('1899-12-30T00:00:00Z');\n        const millisecondsInADay = 86400000;\n\n        // Calculate the original timestamp from Excel serial date in Helsinki time\n        let timestamp = new Date(excelEpoch.getTime() + excelSerialDate * millisecondsInADay);\n\n        // Force the time to Helsinki timezone by adjusting manually\n        let offsetHelsinki = -2 * 60; // Offset in minutes for Europe/Helsinki during standard time\n        let helsinkiTimestamp = new Date(timestamp.getTime() + offsetHelsinki * 60000);\n\n        // Convert Helsinki date to UTC\n        return helsinkiTimestamp.toISOString().replace('T', ' ').split('.')[0];\n    })() \n}}\n"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "product_id",
+              "displayName": "product_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": false,
+              "removed": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1640,
+        220
+      ],
+      "id": "4e9ea72c-3eec-4a3d-89fb-c02bdf55d84a",
+      "name": "Postgres5",
+      "credentials": {
+        "postgres": {
+          "id": "y2dVPAsn5vEdOtGc",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 1333730778,
+          "mode": "list",
+          "cachedResultName": "batch-state",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=1333730778"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        700,
+        560
+      ],
+      "id": "815825e5-8fe6-4262-b3f2-4cc6263fac7d",
+      "name": "Google Sheets Trigger6",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ybVfp0ylWhi2OAXP",
+          "name": "Google Sheets Trigger account 2"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "batch_state",
+          "mode": "list",
+          "cachedResultName": "batch_state"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "batch_id": "={{ $json.batch_id }}",
+            "sector_id": "={{ $json.sector_id }}",
+            "created_at": "={{ \n    (() => {\n        const excelSerialDate = $json.created_at;\n        const excelEpoch = new Date('1899-12-30T00:00:00Z');\n        const millisecondsInADay = 86400000;\n\n        // Calculate the original timestamp from Excel serial date in Helsinki time\n        let timestamp = new Date(excelEpoch.getTime() + excelSerialDate * millisecondsInADay);\n\n        // Force the time to Helsinki timezone by adjusting manually\n        let offsetHelsinki = -2 * 60; // Offset in minutes for Europe/Helsinki during standard time\n        let helsinkiTimestamp = new Date(timestamp.getTime() + offsetHelsinki * 60000);\n\n        // Convert Helsinki date to UTC\n        return helsinkiTimestamp.toISOString().replace('T', ' ').split('.')[0];\n    })() \n}}\n"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "batch_id",
+              "displayName": "batch_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false
+            },
+            {
+              "id": "sector_id",
+              "displayName": "sector_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1600,
+        560
+      ],
+      "id": "289b3fdb-6cca-42b4-b0a9-6ab67bbc129a",
+      "name": "Postgres6",
+      "credentials": {
+        "postgres": {
+          "id": "y2dVPAsn5vEdOtGc",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "pollTimes": {
+          "item": [
+            {
+              "mode": "everyMinute"
+            }
+          ]
+        },
+        "documentId": {
+          "__rl": true,
+          "value": "1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU",
+          "mode": "list",
+          "cachedResultName": "hkoptimizer",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 474833122,
+          "mode": "list",
+          "cachedResultName": "feedback",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1UtCAyOLJQ4Z9M-5JKNhvS7XW4uUY_uduyioUVHOFmeU/edit#gid=474833122"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheetsTrigger",
+      "typeVersion": 1,
+      "position": [
+        680,
+        760
+      ],
+      "id": "a474351c-61cd-4d1d-842c-286fcfecd87e",
+      "name": "Google Sheets Trigger7",
+      "credentials": {
+        "googleSheetsTriggerOAuth2Api": {
+          "id": "ybVfp0ylWhi2OAXP",
+          "name": "Google Sheets Trigger account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "schema": {
+          "__rl": true,
+          "value": "public",
+          "mode": "list",
+          "cachedResultName": "public"
+        },
+        "table": {
+          "__rl": true,
+          "value": "feedback",
+          "mode": "list",
+          "cachedResultName": "feedback"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "id": "={{ $json.id }}",
+            "created_at": "={{ \n    (() => {\n        const excelSerialDate = $json.created_at;\n        const excelEpoch = new Date('1899-12-30T00:00:00Z');\n        const millisecondsInADay = 86400000;\n\n        // Calculate the original timestamp from Excel serial date in Helsinki time\n        let timestamp = new Date(excelEpoch.getTime() + excelSerialDate * millisecondsInADay);\n\n        // Force the time to Helsinki timezone by adjusting manually\n        let offsetHelsinki = -2 * 60; // Offset in minutes for Europe/Helsinki during standard time\n        let helsinkiTimestamp = new Date(timestamp.getTime() + offsetHelsinki * 60000);\n\n        // Convert Helsinki date to UTC\n        return helsinkiTimestamp.toISOString().replace('T', ' ').split('.')[0];\n    })() \n}}\n",
+            "predefined_feedback_id": "={{ $json.predefined_feedback_id }}",
+            "batch_state_id": "={{ $json.batch_state_id == '' ? null : $json.batch_state_id }}",
+            "package_id": "={{ $json.package_id == '' ? null : $json.package_id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "id",
+              "displayName": "id",
+              "required": true,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "predefined_feedback_id",
+              "displayName": "predefined_feedback_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "batch_state_id",
+              "displayName": "batch_state_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "package_id",
+              "displayName": "package_id",
+              "required": true,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": false,
+              "removed": false
+            },
+            {
+              "id": "created_at",
+              "displayName": "created_at",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "dateTime",
+              "canBeUsedToMatch": false
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.5,
+      "position": [
+        1580,
+        760
+      ],
+      "id": "1d847291-4e56-46d6-b96a-220481f7be01",
+      "name": "Postgres7",
+      "credentials": {
+        "postgres": {
+          "id": "y2dVPAsn5vEdOtGc",
+          "name": "Postgres account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "65d27a7e-912a-4f04-930d-780e222c7e3f",
+              "leftValue": "={{ $json.isEmpty() }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "false",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        940,
+        1140
+      ],
+      "id": "1e942630-03bd-4b5e-828f-a76863bd23bf",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2afc0d4b-ee65-4752-9d73-13ac1668e048",
+              "name": "error",
+              "value": "not_found",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1780,
+        1020
+      ],
+      "id": "28927720-05a4-4872-bc0d-170183d11c12",
+      "name": "Edit Fields1"
+    }
+  ],
+  "pinData": {
+    "Webhook": [
+      {
+        "json": {
+          "headers": {
+            "host": "n8n.khiemfle.com",
+            "user-agent": "vscode-restclient",
+            "accept-encoding": "gzip, deflate",
+            "x-forwarded-for": "91.194.240.2",
+            "x-forwarded-host": "n8n.khiemfle.com",
+            "x-forwarded-port": "443",
+            "x-forwarded-proto": "https",
+            "x-forwarded-server": "e83d0ae2a05e",
+            "x-real-ip": "91.194.240.2"
+          },
+          "params": {},
+          "query": {
+            "batch_state_id": "8532e62d1"
+          },
+          "body": {},
+          "webhookUrl": "https://n8n.khiemfle.com/webhook/4df2fb7c-a141-46ab-935f-eb874ba4ce95/available-feedbacks/batch-state",
+          "executionMode": "production"
+        }
+      }
+    ]
+  },
+  "connections": {
+    "Google Sheets Trigger": {
+      "main": [
+        [
+          {
+            "node": "Postgres",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets1": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets3": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "Google Drive1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive1": {
+      "main": [
+        [
+          {
+            "node": "Google Drive2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Drive2": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets2": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Respond to Webhook1": {
+      "main": [
+        []
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook2": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger1": {
+      "main": [
+        [
+          {
+            "node": "Postgres1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger2": {
+      "main": [
+        [
+          {
+            "node": "Postgres2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger3": {
+      "main": [
+        [
+          {
+            "node": "Postgres3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger4": {
+      "main": [
+        [
+          {
+            "node": "Postgres4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger5": {
+      "main": [
+        [
+          {
+            "node": "Postgres5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger6": {
+      "main": [
+        [
+          {
+            "node": "Postgres6",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Sheets Trigger7": {
+      "main": [
+        [
+          {
+            "node": "Postgres7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "Google Sheets1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Edit Fields1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "74907410-939f-40d2-a268-46b1bd9d43ef",
+  "meta": {
+    "instanceId": "61cc11a44edc6e674427319d34a261aeb179b7627e3d1e18dc54cf4a467dc9d6"
+  },
+  "id": "ZczorPpWXeDlT09a",
+  "tags": []
+}
