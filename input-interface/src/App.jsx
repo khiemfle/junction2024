@@ -24,6 +24,12 @@ function App() {
         }
         
         const data = await response.json();
+        
+        // Check if the response contains an error
+        if (data.length === 1 && data[0].json.error === 'not_found') {
+          throw new Error('No images found for this batch state ID');
+        }
+        
         setImages(data);
         setLoading(false);
       } catch (err) {
@@ -35,8 +41,14 @@ function App() {
     fetchImages();
   }, []); // Run once when component mounts
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (loading) return <div className="loading">Loading...</div>;
+  if (error) return (
+    <div className="error-container">
+      <h1>Error</h1>
+      <p>{error}</p>
+      <p>Please check your batch state ID and try again.</p>
+    </div>
+  );
 
   return (
     <div className="App">
