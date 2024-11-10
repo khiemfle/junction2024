@@ -8,16 +8,26 @@ function App() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Get batch_state_id from URL parameters or use default
+    // Get batch_state_id or package_id from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const batchStateId = urlParams.get('batch_state_id') || 'cacb4d3c';
+    const batchStateId = urlParams.get('batch_state_id');
+    const packageId = urlParams.get('package_id');
 
-    // Fetch images using the batch_state_id
+    // Construct the appropriate URL based on which ID is present
+    const baseUrl = 'https://n8n.khiemfle.com/webhook/4df2fb7c-a141-46ab-935f-eb874ba4ce95/available-feedbacks';
+    let fetchUrl;
+    
+    if (packageId) {
+      fetchUrl = `${baseUrl}/package?package_id=${packageId}`;
+    } else {
+      // Default to batch_state_id if no package_id (using default if neither exists)
+      fetchUrl = `${baseUrl}/batch-state?batch_state_id=${batchStateId || 'cacb4d3c'}`;
+    }
+
+    // Fetch images using the constructed URL
     const fetchImages = async () => {
       try {
-        const response = await fetch(
-          `https://n8n.khiemfle.com/webhook/4df2fb7c-a141-46ab-935f-eb874ba4ce95/available-feedbacks/batch-state?batch_state_id=${batchStateId}`
-        );
+        const response = await fetch(fetchUrl);
         
         if (!response.ok) {
           throw new Error('Failed to fetch images');

@@ -19,29 +19,41 @@ const ImageGallery = ({ images }) => {
     setIsSubmitting(true);
     setError(null);
 
-    // Get batch_state_id from URL
+    // Get IDs from URL
     const urlParams = new URLSearchParams(window.location.search);
     const batchStateId = urlParams.get('batch_state_id');
+    const packageId = urlParams.get('package_id');
 
-    // Check if batch_state_id is missing
-    if (!batchStateId) {
-      setError('batch_state_id is required');
+    // Check if required IDs are missing
+    if (!batchStateId && !packageId) {
+      setError('Either batch_state_id or package_id is required');
       setIsSubmitting(false);
       return;
     }
 
     try {
+      const endpoint = packageId 
+        ? 'package'
+        : 'batch';
+      
+      const requestBody = packageId
+        ? {
+            feedback_template_id: selectedImage.json.id,
+            package_id: packageId,
+          }
+        : {
+            feedback_template_id: selectedImage.json.id,
+            batch_state_id: batchStateId,
+          };
+
       const response = await fetch(
-        'https://n8n.khiemfle.com/webhook/4df2fb7c-a141-46ab-935f-eb874ba4ce95/feedback/batch',
+        `https://n8n.khiemfle.com/webhook/4df2fb7c-a141-46ab-935f-eb874ba4ce95/feedback/${endpoint}`,
         {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            feedback_template_id: selectedImage.json.id,
-            batch_state_id: batchStateId,
-          }),
+          body: JSON.stringify(requestBody),
         }
       );
 
